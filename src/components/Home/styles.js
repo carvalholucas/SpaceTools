@@ -19,7 +19,7 @@ export const Desc = styled.section`
     }
 
     p {
-        color: #9a9a9a;
+        color: #969696;
         font-weight: 300;
         line-height: 1.5em;
         margin-top: 2em;
@@ -55,7 +55,7 @@ export const Footer = styled.footer`
 
 export const Actions = styled.div`
     span {
-        color: #a9a9a9;
+        color: #969696;
         cursor: pointer;
         padding: 0 1em;
 

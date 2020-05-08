@@ -1,10 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 import { Copy } from 'styled-icons/boxicons-solid'
 import * as S from './styles'
 
 const Home = () => {
     const [type, setType] = useState("")
+    const inputRef = useRef(null)
+
+    function handleCopy() {
+        inputRef.current.select()
+        document.execCommand("copy")
+    }
+
+    useEffect(() => {
+        setType("")
+    }, [])
 
     return (
         <S.Section>
@@ -18,16 +28,21 @@ const Home = () => {
                     type={type}
                     name="text"
                     rows="10"
+                    ref={inputRef}
                     placeholder="Escreva ou cole (copy & paste) o seu texto aqui"
                 />
 
                 <S.Footer>
                     <S.Actions>
-                        <span onClick={() => setType('uppercase')}>Maiúsculo</span>
-                        <span onClick={() => setType('lowercase')}>Maiúsculo</span>
-                        <span onClick={() => setType('capitalize')}>Primeira Letra Maiúscula</span>
+                        <span className={type === "uppercase" ? "active" : ""} onClick={() => setType('uppercase')}>Maiúsculo</span>
+                        <span className={type === "lowercase" ? "active" : ""} onClick={() => setType('lowercase')}>Minúsculo</span>
+                        <span className={type === "capitalize" ? "active" : ""} onClick={() => setType('capitalize')}>Primeira Letra Maiúscula</span>
+                        <span className="clear" onClick={() => {
+                            inputRef.current.value = ""
+                            setType("")
+                        }}>Limpar</span>
                     </S.Actions>
-                    <span className="copy">Copiar <Copy size={18} style={{ marginLeft: 15 }} /></span>
+                    <span className="copy" onClick={event => handleCopy(event)}>Copiar <Copy size={18} style={{ marginLeft: 15 }} /></span>
                 </S.Footer>
             </S.Card>
         </S.Section>

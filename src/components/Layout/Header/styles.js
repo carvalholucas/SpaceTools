@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from "styled-media-query"
 
 export const Header = styled.header`
     align-items: center;
@@ -6,12 +7,23 @@ export const Header = styled.header`
     grid-area: header;
     justify-content: space-between;
     padding: 0 6em;
+
+    ${media.lessThan("medium")`
+        padding: 0 2em;
+    `}
 `
 
-export const Logo = styled.span`
+export const Logo = styled.span` 
+    align-items: center;
     color: #2a2a2a;
+    display: flex;
     font-size: 1.2em;
     font-weight: 700;
+
+    .icon {
+        margin-right: .5em;
+        width: 2em;
+    }
 `
 
 export const Donate = styled.button`

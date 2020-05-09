@@ -25,6 +25,7 @@ const Home = () => {
 
             <S.Card>
                 <S.TextArea
+                    aria-label="Sua frase"
                     type={type}
                     name="text"
                     rows="10"

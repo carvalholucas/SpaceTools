@@ -34,15 +34,15 @@ const Home = () => {
 
                 <S.Footer>
                     <S.Actions>
-                        <span className={type === "uppercase" ? "active" : ""} onClick={() => setType('uppercase')}>Maiúsculo</span>
-                        <span className={type === "lowercase" ? "active" : ""} onClick={() => setType('lowercase')}>Minúsculo</span>
-                        <span className={type === "capitalize" ? "active" : ""} onClick={() => setType('capitalize')}>Primeira Letra Maiúscula</span>
-                        <span className="clear" onClick={() => {
+                        <S.Button className={type === "uppercase" ? "active" : ""} onClick={() => setType('uppercase')}>Maiúsculo</S.Button>
+                        <S.Button className={type === "lowercase" ? "active" : ""} onClick={() => setType('lowercase')}>Minúsculo</S.Button>
+                        <S.Button className={type === "capitalize" ? "active" : ""} onClick={() => setType('capitalize')}>Primeira Letra Maiúscula</S.Button>
+                        <S.Button className="clear" onClick={() => {
                             inputRef.current.value = ""
                             setType("")
-                        }}>Limpar</span>
+                        }}>Limpar</S.Button>
                     </S.Actions>
-                    <span className="copy" onClick={event => handleCopy(event)}>Copiar <Copy size={18} style={{ marginLeft: 15 }} /></span>
+                    <S.Button className="copy" onClick={event => handleCopy(event)}>Copiar <Copy size={18} style={{ marginLeft: 15 }} /></S.Button>
                 </S.Footer>
             </S.Card>
         </S.Section>

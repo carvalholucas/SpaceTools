@@ -3,7 +3,7 @@ import media from 'styled-media-query'
 
 export const Footer = styled.footer`
     align-items: center;
-    color: #757575;
+    color: #616161;
     display: flex;
     font-size: .8em;
     grid-area: footer;

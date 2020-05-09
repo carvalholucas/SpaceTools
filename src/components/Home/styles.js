@@ -70,7 +70,7 @@ export const Actions = styled.div`
 
 export const Button = styled.button`
     border: none;
-    color: #757575;
+    color: #616161;
     cursor: pointer;
     font-size: .8em;
     font-family: 'Poppins', sans-serif;

@@ -9,6 +9,8 @@ export const Header = styled.header`
     padding: 0 6em;
 
     ${media.lessThan("medium")`
+        display: flex;
+        justify-content: center;
         padding: 0 2em;
     `}
 `

@@ -13,6 +13,6 @@ export const Wrapper = styled.main`
 
     ${media.lessThan("medium")`
         grid-template-columns: 2em 1fr 2em;
-        grid-template-rows: 4em calc(100% - 4em) 4em;
+        grid-template-rows: 6em calc(100% - 4em) 4em;
     `}
 `

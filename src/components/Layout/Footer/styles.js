@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Footer = styled.footer`
     align-items: center;
@@ -8,4 +9,8 @@ export const Footer = styled.footer`
     grid-area: footer;
     justify-content: center;
     padding: 0 6em;
+
+    ${media.lessThan("medium")`
+        padding: 0 2em;
+    `}
 `

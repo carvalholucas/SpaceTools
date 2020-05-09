@@ -85,10 +85,11 @@ export const Actions = styled.div`
         }
 
         &.clear {
-            color: #ff5f5f;
+            color: #c71b1b;
 
             &:hover {
-            text-decoration: underline;
+                color: #c71b1b;
+                text-decoration: underline;
             }
         }
 
@@ -112,7 +113,7 @@ export const Actions = styled.div`
             }
 
             &.clear {
-                border-color: #ff5f5f;
+                border-color: #c71b1b;
             }
 
             &:hover {

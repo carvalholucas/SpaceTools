@@ -23,9 +23,9 @@ const Home = () => {
                 <p>Converta de maiúscula para minúscula, ou vice-versa, basta digitar a frase, depois clique nas opções abaixo:</p>
             </S.Desc>
 
-            <S.Card>
+            <S.Card id="textId">
                 <S.TextArea
-                    aria-label="Sua frase"
+                    aria-labelledby="textId"
                     type={type}
                     name="text"
                     rows="10"

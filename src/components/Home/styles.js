@@ -1,155 +1,94 @@
 import styled from 'styled-components'
-import media from "styled-media-query"
 
-export const Section = styled.section`
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    grid-area: main;
-    justify-content: space-evenly;
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
+
+export const Wrap = styled.section`
+    min-height: calc(100vh - 4em);
+    max-height: 100%;
+    padding: 4em 0;
 `
 
-export const Desc = styled.section`
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+export const Title = styled.h1`
+    font-size: 1.4em;
+    font-weight: 500;
+    margin: 2em 0 2em;
 
-    h1 {
-        font-size: 2em;
-        font-weight: 700;
-        line-height: 1.5em;
-        text-align: center;
+    &:first-child {
+        margin-top: 0;
+    }
+`
+
+export const CardWrap = styled.section`
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+
+    &:before {
+        content: '';
+        padding-bottom: 100%;
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
     }
 
-    p {
-        color: #616161;
-        font-weight: 300;
-        line-height: 1.5em;
-        margin-top: 2em;
-        text-align: center;
-        width: 70%;
-
-        ${media.lessThan("medium")`
-            width: 90%;
-        `}
+    & > *:first-child {
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
     }
 `
 
 export const Card = styled.article`
-    background: #fff;
-    width: 50vw;
-
-    ${media.between("medium", "large")`
-        width: 100%;
-    `}    
-
-    ${media.lessThan("medium")`
-        width: 100%;
-    `}
-`
-
-export const Footer = styled.footer`
     align-items: center;
-    border-top: 1px solid #e6e6e6;
-    display: flex;
-    justify-content: space-between;
-    padding: 1em 1.5em;
-
-    ${media.lessThan("medium")`
-        align-items: initial;
-        flex-direction: column;
-    `}
-`
-
-export const Actions = styled.div`
-    ${media.lessThan("medium")`
-        display: flex;
-        flex-direction: column;
-    `}
-`
-
-export const Button = styled.button`
-    border: none;
-    color: #616161;
+    background: #ffffff;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: .8em;
-    font-family: 'Poppins', sans-serif;
-    outline: 0;
-    padding: 0 1em;
-
-    &.active {
-        color: #2a2a2a;
-        text-decoration: underline;
-    }
-
-    &.copy {
-        background: #2a2a2a;
-        color: #fff;
-        cursor: pointer;
-        padding: .8em;
-
-        &:hover {
-            background: rgba(42, 42, 42, 0.8);
-        }
-    }
-
-    &.clear {
-        color: #c71b1b;
-        padding: .8em;
-
-        &:hover {
-            background: rgba(199, 27, 27, 0.2);
-            color: #c71b1b;
-            text-decoration: none;
-        }
-    }
-
-    &:first-child {
-        padding-left: 0;
-    }
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+    padding: 1.5em;
+    text-align: center;
+    transition: transform .3s;
 
     &:hover {
-        color: #000;
-        text-decoration: underline;
+        transform: scale(1.1)
     }
 
-    ${media.lessThan("medium")`
-        border: 1px solid #e6e6e6;
-        cursor: pointer;
-        margin-bottom: 1em;
-        padding: .8em;
+    p.coming {
+        color: #7a7a7a;
+        font-size: .7em;
+    }
 
-        &:first-child {
-            padding-left: .8em;
-        }
-
-        &.clear {
-            border-color: #c71b1b;
-        }
-
-         &:hover {
-            background: #f2f2f2;
-        }
-    `}
+    .icon {
+        align-items: center;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+    }
 `
 
-export const TextArea = styled.textarea`
-    border: none;
-    color: #2a2a2a;
-    font-size: 1.1em;
-    font-family: 'Poppins', sans-serif;
-    outline: 0;
-    padding: 2em;
-    resize: none;
-    text-transform: ${props => props.type || 'initial'};
-    width: 100%;
-
-    ::placeholder {
-        color: #d9d9d9;
-        font-weight: 300;
+export const CardDesc = styled.section`
+    h1 {
+        font-size: 1em;
+        font-weight: 500;
+        line-height: 1.5em;
+        margin-bottom: .6em;
     }
 
-    ${media.lessThan("medium")`
-        
-    `}
+    p {
+        color: #637381;
+        font-size: .9em;
+        font-weight: 300;
+        line-height: 1.5;
+    }
+`
+
+export const CardIcon = styled.div`
+    background: rgba(72, 41, 146, .2);
+    color: #482992;
+    height: 4em;
+    width: 4em;
+`
+
+export const Link = styled(AniLink)`
+    text-decoration: none;
 `

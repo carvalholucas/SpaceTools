@@ -3,10 +3,12 @@ import media from "styled-media-query"
 
 export const Header = styled.header`
     align-items: center;
+    background: #482992;
     display: flex;
     grid-area: header;
     justify-content: space-between;
-    padding: 0 6em;
+    padding: 0 5em;
+    z-index: 1;
 
     ${media.lessThan("medium")`
         display: flex;
@@ -22,9 +24,9 @@ export const Logo = styled.span`
     font-size: 1.2em;
     font-weight: 700;
 
-    .icon {
+    img {
         margin-right: .5em;
-        width: 2em;
+        width: 200px;
     }
 `
 

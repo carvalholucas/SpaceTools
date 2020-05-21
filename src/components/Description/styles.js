@@ -1,5 +1,33 @@
 import styled from 'styled-components'
 
 export const Description = styled.section`
-    grid-area: desc;
+    align-items: center;
+    display: flex;
+    min-height: 100vh;
+    max-height: 100%;
+    justify-content: center;
+`
+
+export const Content = styled.article`
+    width: 50vw;
+
+    h2 {
+        color: #2a2a2a;
+        font-size: 1.2em;
+        font-weight: 700;
+        line-height: 1.5em;
+        margin-bottom: 2em;
+        text-align: center;
+    }
+
+    p { 
+        color: #616161;
+        font-weight: 300;
+        line-height: 1.5em;
+        text-align: justify;
+
+        span {
+        
+        }
+    }
 `

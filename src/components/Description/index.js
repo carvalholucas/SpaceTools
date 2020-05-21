@@ -2,9 +2,11 @@ import React from 'react'
 
 import * as S from './styles'
 
-const Description = () => (
+const Description = ({ text }) => (
     <S.Description>
-        <h1>Desc</h1>
+        <S.Content>
+            {text}
+        </S.Content>
     </S.Description>
 )
 

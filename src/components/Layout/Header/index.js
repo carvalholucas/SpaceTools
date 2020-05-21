@@ -1,14 +1,20 @@
 import React from "react"
 
-import Icon from '../../../images/icon.png'
 import * as S from './styles'
+import Link from '../../Link'
 
-const Header = ( ) => (
+import LogoDark from '../../../images/logo.png'
+import LogoWhite from '../../../images/logo-white.png'
+
+const Header = ({ white }) => (
 	<S.Header>
-		<S.Logo>
-			<img className="icon" src={Icon} alt="Convert text - Lazytext"/>
-			Lazytext
-		</S.Logo>
+		<Link 
+			route="/"
+			direction="left">
+			<S.Logo>
+				<img src={white ? LogoWhite : LogoDark} alt="Space Tools" />
+			</S.Logo>
+		</Link>
 		{/* <S.Donate>Doe-me um café</S.Donate> */}
 	</S.Header>
 )

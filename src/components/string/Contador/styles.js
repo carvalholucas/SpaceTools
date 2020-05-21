@@ -1,79 +1,10 @@
 import styled from 'styled-components'
 import media from "styled-media-query"
 
-export const Wrapper = styled.main`
-    display: grid;
-    font-family: 'Poppins', sans-serif;
-    overflow: hidden;
-    grid-template-columns: 5em 1fr 5em;
-    grid-template-rows: ${props => props.hasHero ? 
-        "auto auto 15em 4em" : 
-        "6em auto auto 15em 4em"};
-    grid-template-areas:
-        "header header header"
-        "hero hero hero"
-        "main main main"
-        "subfooter subfooter subfooter"
-        "footer footer footer";
-
-    ${({ hasHero }) => hasHero && `
-        grid-template-areas:
-            "hero hero hero"
-            ". main ."
-            "subfooter subfooter subfooter"
-            "footer footer footer";
-    `}
-
-    ${media.lessThan("medium")`
-        grid-template-columns: 2em 1fr 2em;
-        grid-template-rows: 6em calc(100% - 4em) 4em;
-    `}
-`
-
-export const Main = styled.main`
-    grid-area: main;
-`
-
-export const Section = styled.section`
-    display: flex;
-    flex-direction: column;
-    height: calc(${props => props.height || "100vh"} - 4em);
-`
-
-export const Desc = styled.section`
-    background: linear-gradient(to bottom, #482992 5%, transparent), ${props => `url(${props.bg})`} no-repeat;
-    background-size: cover;
-    background-position: center center;
-    color: #ffffff;
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    line-height: 1.5em;
-    padding: 0 5em;
-    text-align: center;
-
-    h1 {
-        font-size: 2em;
-        font-weight: 700;
-    }
-
-    p {
-        font-weight: 300;
-        margin-top: 2em;
-        width: 100%;
-
-        ${media.lessThan("medium")`
-            width: 90%;
-        `}
-    }
-`
-
 export const Card = styled.article`
-    align-self: center;
     background: #fff;
     width: 50vw;
-    transform: translateY(-3em);
+    transform: translateY(-5em);
 
     ${media.between("medium", "large")`
         width: 100%;
@@ -81,6 +12,26 @@ export const Card = styled.article`
 
     ${media.lessThan("medium")`
         width: 100%;
+    `}
+`
+
+export const Footer = styled.footer`
+    align-items: center;
+    border-top: 1px solid #e6e6e6;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1.5em;
+
+    ${media.lessThan("medium")`
+        align-items: initial;
+        flex-direction: column;
+    `}
+`
+
+export const Actions = styled.div`
+    ${media.lessThan("medium")`
+        display: flex;
+        flex-direction: column;
     `}
 `
 
@@ -98,11 +49,16 @@ export const Button = styled.button`
         text-decoration: underline;
     }
 
-    &.copy {
+    &.block {
         background: #2a2a2a;
         color: #fff;
         cursor: pointer;
         padding: .8em;
+
+        &.copy {
+            background: rgba(42, 42, 42, 0.1);
+            color: #141414;
+        }
 
         &:hover {
             background: rgba(42, 42, 42, 0.85);
@@ -122,13 +78,13 @@ export const Button = styled.button`
         }
     }
 
-    &:first-child {
-        padding-left: 0;
-    }
-
     &:hover {
         color: #000;
         text-decoration: underline;
+    }
+
+    &.no-pad {
+        padding-left: 0;
     }
 
     ${media.lessThan("medium")`
@@ -170,4 +126,22 @@ export const TextArea = styled.textarea`
     ${media.lessThan("medium")`
         
     `}
+`
+
+export const Numbers = styled.section`
+    display: flex;
+    padding: 0 1.5em;
+    width: 50vw;
+
+    p {
+        font-size: .9em;
+        margin: 0 3em 1em 0;
+    }
+
+    span {
+        font-size: 1.3em;
+        font-weight: 700;
+        margin-left: .3em;
+        vertical-align: middle;
+    }
 `

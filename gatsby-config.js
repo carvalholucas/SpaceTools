@@ -2,14 +2,15 @@ require('dotenv').config()
 
 module.exports = {
 	siteMetadata: {
-		title: `Lazytext`,
-		description: `Free Tools online`,
+		title: `Space Tools`,
+		description: `Ferramentas Onlines Grátis`,
 		author: `Lucas Carvalho`,
 		siteUrl: `https://lazytext.netlify.app`,
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-styled-components`,
+		`gatsby-plugin-transition-link`,
 		{
 			resolve: 'gatsby-plugin-robots-txt',
 			options: {
@@ -37,7 +38,7 @@ module.exports = {
 				fonts: [
 					{
 						family: `Poppins`,
-						variants: [`200`, `300`, `500`, `700`]
+						variants: [`200`, `300`, `400`, `500`, `700`]
 					},
 				],
 			},
@@ -54,8 +55,8 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
-				name: `Lazytext`,
-				short_name: `lazytext`,
+				name: `Space Tools`,
+				short_name: `Space Tools`,
 				start_url: `/`,
 				background_color: `#fff`,
 				theme_color: `#2a2a2a`,

@@ -1,52 +1,51 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React from 'react'
 
-import { Copy } from 'styled-icons/boxicons-solid'
+import { categories, tools } from "./tools"
+
+import { Font, Search } from '@styled-icons/boxicons-regular'
+import { BackspaceOutline } from '@styled-icons/evaicons-outline'
+import { SortNumerically } from '@styled-icons/typicons'
+
 import * as S from './styles'
 
+import Link from '../Link'
+
 const Home = () => {
-    const [type, setType] = useState("")
-    const inputRef = useRef(null)
 
-    function handleCopy() {
-        inputRef.current.select()
-        document.execCommand("copy")
-    }
-
-    useEffect(() => {
-        setType("")
-    }, [])
+    const handleIcon = (type) => ({
+        'case': <Font size={25} />,
+        'remove': <BackspaceOutline size={25} style={{ marginLeft: -3 }} />,
+        'search': <Search size={25} />,
+        'counter': <SortNumerically size={25} />
+    }[type] || 'Nnehum ícone encontrado')
 
     return (
-        <S.Section>
-            <S.Desc>
-                <h1>Converter Maiúscula para Minúscula</h1>
-                <p>Converta de maiúscula para minúscula, ou vice-versa, basta digitar a frase, depois clique nas opções abaixo:</p>
-            </S.Desc>
-
-            <S.Card id="textId">
-                <S.TextArea
-                    aria-labelledby="textId"
-                    type={type}
-                    name="text"
-                    rows="10"
-                    ref={inputRef}
-                    placeholder="Escreva ou cole (copy & paste) o seu texto aqui"
-                />
-
-                <S.Footer>
-                    <S.Actions>
-                        <S.Button className={type === "uppercase" ? "active" : ""} onClick={() => setType('uppercase')}>Maiúsculo</S.Button>
-                        <S.Button className={type === "lowercase" ? "active" : ""} onClick={() => setType('lowercase')}>Minúsculo</S.Button>
-                        <S.Button className={type === "capitalize" ? "active" : ""} onClick={() => setType('capitalize')}>Primeira Letra Maiúscula</S.Button>
-                        <S.Button className="clear" onClick={() => {
-                            inputRef.current.value = ""
-                            setType("")
-                        }}>Limpar</S.Button>
-                    </S.Actions>
-                    <S.Button className="copy" onClick={event => handleCopy(event)}>Copiar <Copy size={18} style={{ marginLeft: 15 }} /></S.Button>
-                </S.Footer>
-            </S.Card>
-        </S.Section>
+        <S.Wrap>
+            {categories.map((cat, index) => {
+                if (!cat.disable)
+                    return (
+                        <>
+                            <S.Title key={index}>{cat.label}</S.Title>
+                            <S.CardWrap>
+                                {tools.map((tool, index) => {
+                                    if (tool.category === cat.value)
+                                        return (
+                                            <Link route={tool.route} key={index}>
+                                                <S.Card>
+                                                    <S.CardIcon className="icon">{handleIcon(tool.icon)}</S.CardIcon>
+                                                    <S.CardDesc>
+                                                        <h1>{tool.title}</h1>
+                                                        <p>{tool.desc}</p>
+                                                    </S.CardDesc>
+                                                </S.Card>
+                                            </Link>
+                                        )
+                                })}
+                            </S.CardWrap>
+                        </>
+                    )
+            })}
+        </S.Wrap>
     )
 }
 

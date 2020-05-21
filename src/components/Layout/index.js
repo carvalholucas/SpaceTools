@@ -12,7 +12,7 @@ const Layout = ({ children, hasHero }) => {
 		<>
 			<GlobalStyles />
 			<S.Wrapper hasHero={hasHero}>
-				{!hasHero &&<Header white={true}/>}
+				{!hasHero &&<Header white={true} color="#482992"/>}
 				{hasHero && <Hero />}
 				{children}
 				<Footer />

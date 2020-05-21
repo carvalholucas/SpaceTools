@@ -1,7 +1,9 @@
 import React, { useRef } from 'react'
 
 import { Copy } from 'styled-icons/boxicons-solid'
+
 import * as S from './styles'
+import * as G from '../../Layout/styles'
 
 const RemoverEspaco = () => {
     const inputRef = useRef(null)
@@ -20,8 +22,8 @@ const RemoverEspaco = () => {
 
     return (
         <>
-            <S.Card id="textId">
-                <S.TextArea
+            <G.Card id="textId">
+                <G.TextArea
                     aria-labelledby="textId"
                     name="text"
                     rows="10"
@@ -31,21 +33,21 @@ const RemoverEspaco = () => {
 
                 <S.Footer>
                     <S.Actions>
-                        <S.Button
+                        <G.Button
                             className="clear"
                             onClick={() => inputRef.current.value = "" }
-                        >Limpar</S.Button>
+                        >Limpar</G.Button>
                     </S.Actions>
 
                     <S.Actions>
-                        <S.Button className="block" onClick={() => handleRemove()}> Remover Espaços </S.Button>
-                        <S.Button className="block" onClick={event => handleCopy(event)} style={{ marginLeft: 15 }}>
+                        <G.Button className="block" onClick={() => handleRemove()}> Remover Espaços </G.Button>
+                        <G.Button className="block" onClick={event => handleCopy(event)} style={{ marginLeft: 15 }}>
                             Copiar
                             <Copy size={18} style={{ marginLeft: 15 }} />
-                        </S.Button>
+                        </G.Button>
                     </S.Actions>
                 </S.Footer>
-            </S.Card>
+            </G.Card>
         </>
     )
 }

@@ -32,6 +32,7 @@ export const Wrapper = styled.main`
 
 export const Main = styled.main`
     grid-area: main;
+    min-height: 100vh;
 `
 
 export const Section = styled.section`

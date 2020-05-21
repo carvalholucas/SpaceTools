@@ -1,19 +1,6 @@
 import styled from 'styled-components'
 import media from "styled-media-query"
 
-export const Card = styled.article`
-    background: #fff;
-    width: 50vw;
-
-    ${media.between("medium", "large")`
-        width: 100%;
-    `}    
-
-    ${media.lessThan("medium")`
-        width: 100%;
-    `}
-`
-
 export const Footer = styled.footer`
     align-items: center;
     border-top: 1px solid #e6e6e6;
@@ -106,28 +93,8 @@ export const Button = styled.button`
     `}
 `
 
-export const TextArea = styled.textarea`
-    border: none;
-    color: #2a2a2a;
-    font-size: 1.1em;
-    font-family: 'Poppins', sans-serif;
-    outline: 0;
-    padding: 2em;
-    resize: none;
-    text-transform: ${props => props.type || 'initial'};
-    width: 100%;
-
-    ::placeholder {
-        color: #d9d9d9;
-        font-weight: 300;
-    }
-
-    ${media.lessThan("medium")`
-        
-    `}
-`
-
 export const Fields = styled.section`
+    align-self: center;
     width: 50vw;
 
     button {

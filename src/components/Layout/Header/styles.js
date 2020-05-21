@@ -2,8 +2,8 @@ import styled from 'styled-components'
 import media from "styled-media-query"
 
 export const Header = styled.header`
+    background: ${props => props.color};
     align-items: center;
-    background: #482992;
     display: flex;
     grid-area: header;
     justify-content: space-between;

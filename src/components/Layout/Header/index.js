@@ -6,8 +6,8 @@ import Link from '../../Link'
 import LogoDark from '../../../images/logo.png'
 import LogoWhite from '../../../images/logo-white.png'
 
-const Header = ({ white }) => (
-	<S.Header>
+const Header = ({ white, color }) => (
+	<S.Header color={color}>
 		<Link 
 			route="/"
 			direction="left">

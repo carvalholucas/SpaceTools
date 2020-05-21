@@ -6,6 +6,8 @@ import Contador from "../components/string/Contador"
 
 import * as L from "../components/Layout/styles"
 
+import Image from '../images/bg2.png'
+
 const ContadorPage = () => (
 	<Layout>
 		<SEO 
@@ -14,7 +16,7 @@ const ContadorPage = () => (
 		/>
 		<L.Main>
 			<L.Section>
-				<L.Desc>
+				<L.Desc bg={Image}>
 					<h1>Contador de Caracteres, Palavras e Linha</h1>
 					<p>Precisa remover os espaços extras em seus textos? Podemos ajudar você a fazer isso.</p>
 				</L.Desc>

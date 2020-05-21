@@ -4,6 +4,7 @@ import { Copy } from 'styled-icons/boxicons-solid'
 import { ExchangeAlt } from 'styled-icons/fa-solid'
 
 import * as S from './styles'
+import * as G from '../../Layout/styles'
 
 const Contador = () => {
     const inputRef = useRef(null)
@@ -30,8 +31,8 @@ const Contador = () => {
 
     return (
         <>
-            <S.Card id="textId">
-                <S.TextArea
+            <G.Card id="textId">
+                <G.TextArea
                     aria-labelledby="textId"
                     name="text"
                     rows="8"
@@ -42,13 +43,13 @@ const Contador = () => {
 
                 <S.Footer>
                     <S.Actions>
-                        <S.Button
+                        <G.Button
                             className="clear"
                             onClick={() => handleClear()}
-                        >Limpar</S.Button>
+                        >Limpar</G.Button>
                     </S.Actions>
                 </S.Footer>
-            </S.Card>
+            </G.Card>
 
             <S.Numbers>
                 <p>Caracteres: <span>{caracteres}</span></p>

@@ -22,6 +22,7 @@ export const CardWrap = styled.section`
     display: grid;
     grid-gap: 2em;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    grid-auto-rows: 1fr;
 
     &:before {
         content: '';

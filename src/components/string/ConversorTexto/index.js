@@ -31,8 +31,8 @@ const Home = () => {
 
             <S.Footer>
                 <S.Actions>
-                    <G.Button className={type === "uppercase" ? "active" : ""} onClick={() => setType('uppercase')}>Maiúsculo</G.Button>
-                    <G.Button className={type === "lowercase" ? "active" : ""} onClick={() => setType('lowercase')}>Minúsculo</G.Button>
+                    <G.Button className={type === "uppercase" ? "active" : ""} onClick={() => setType('uppercase')}>MAIÚSCULO</G.Button>
+                    <G.Button className={type === "lowercase" ? "active" : ""} onClick={() => setType('lowercase')}>minúsculo</G.Button>
                     <G.Button className={type === "capitalize" ? "active" : ""} onClick={() => setType('capitalize')}>Primeira Letra Maiúscula</G.Button>
                     <G.Button className="clear" onClick={() => {
                         inputRef.current.value = ""

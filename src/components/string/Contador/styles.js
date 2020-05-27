@@ -24,8 +24,15 @@ export const Actions = styled.div`
 export const Numbers = styled.section`
     align-self: center;
     display: flex;
+    margin-top: 2em;
     padding: 0 1.5em;
-    width: 50vw;
+    width: 60vw;
+
+    ${media.lessThan("medium")`
+        flex-direction: column;
+        margin-bottom: 1em;
+        width: 100%;
+    `}
 
     p {
         font-size: .9em;

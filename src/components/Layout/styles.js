@@ -6,9 +6,7 @@ export const Wrapper = styled.main`
     font-family: 'Poppins', sans-serif;
     overflow: hidden;
     grid-template-columns: 5em 1fr 5em;
-    grid-template-rows: ${props => props.hasHero ? 
-        "auto auto 15em 4em" : 
-        "6em auto auto 15em 4em"};
+    grid-template-rows: 5em auto auto 15em 4em;
     grid-template-areas:
         "header header header"
         "hero hero hero"
@@ -17,6 +15,7 @@ export const Wrapper = styled.main`
         "footer footer footer";
 
     ${({ hasHero }) => hasHero && `
+        grid-template-rows: auto auto 15em 4em;
         grid-template-areas:
             "hero hero hero"
             ". main ."
@@ -26,7 +25,20 @@ export const Wrapper = styled.main`
 
     ${media.lessThan("medium")`
         grid-template-columns: 2em 1fr 2em;
-        grid-template-rows: 6em calc(100% - 4em) 4em;
+        grid-template-rows: 5em auto auto 4em;
+        grid-template-areas:
+        "header header header"
+        "hero hero hero"
+        "main main main"
+        "footer footer footer";
+
+        ${({ hasHero }) => hasHero && `
+            grid-template-rows: auto auto 4em;
+            grid-template-areas:
+            "hero hero hero"
+            ". main ."
+            "footer footer footer";
+        `}
     `}
 `
 
@@ -38,43 +50,48 @@ export const Main = styled.main`
 export const Section = styled.section`
     display: flex;
     flex-direction: column;
-    height: calc(${props => props.height || "100vh"} - 4em);
+    height: calc(${props => props.height || "100vh"} - 7em);
+
+    ${media.lessThan("medium")`
+        height: 100%;
+    `}
 `
 
 export const Desc = styled.section`
-    background: linear-gradient(to bottom, #482992 5%, transparent), ${props => `url(${props.bg})`} no-repeat;
-    background-size: cover;
-    background-position: center center;
-    color: #ffffff;
+    color: #211d67;
     display: flex;
-    flex: 1;
     flex-direction: column;
+    flex: 1;
     justify-content: center;
     line-height: 1.5em;
     padding: 0 5em;
     text-align: center;
 
+    ${media.lessThan("medium")`
+        align-items: center;
+        padding: 2em 1em;
+    `}
+
     h1 {
         font-size: 2em;
         font-weight: 700;
+
+        ${media.lessThan("medium")`
+            font-size: 1.2em;
+        `}
     }
 
     p {
         font-weight: 300;
         margin-top: 2em;
         width: 100%;
-
-        ${media.lessThan("medium")`
-            width: 90%;
-        `}
     }
 `
 
 export const Card = styled.article`
     align-self: center;
     background: #fff;
-    width: 50vw;
-    transform: translateY(-3em);
+    width: 60vw;
 
     ${media.between("medium", "large")`
         width: 100%;
@@ -86,56 +103,55 @@ export const Card = styled.article`
 `
 
 export const Button = styled.button`
+    background: rgba(72, 41, 146, 0.2);
+    border-radius: 25px;
     border: none;
-    color: #616161;
+    color: #482992;
     cursor: pointer;
     font-size: .8em;
+    font-weight: 500;
     font-family: 'Poppins', sans-serif;
+    margin-right: 1em;
     outline: 0;
-    padding: 0 1em;
+    padding: 1em 1.5em;
 
+    &:hover, 
     &.active {
-        color: #2a2a2a;
-        text-decoration: underline;
+        background: #482992;
+        color: #ffffff;
     }
 
     &.copy {
-        background: #2a2a2a;
-        color: #fff;
+        background: #ffffff;
+        border: 1px solid #141414;
+        color: #141414;
         cursor: pointer;
-        padding: .8em;
+        margin-right: 0;
 
         &:hover {
-            background: rgba(42, 42, 42, 0.85);
-            color: #fff;
+            background: rgba(42, 42, 42, 0.2);
+            border: 1px solid rgba(42, 42, 42, 0.2);
             text-decoration: none;
         }
     }
 
     &.clear {
+        background: #ffffff;
+        border: 1px solid #c71b1b;
         color: #c71b1b;
-        padding: .8em;
 
         &:hover {
-            background: rgba(199, 27, 27, 0.2);
-            color: #c71b1b;
+            background:  rgba(199, 27, 27, 0.2);
+            border: 1px solid rgba(199, 27, 27, 0.2);
             text-decoration: none;
         }
-    }
-
-    &:first-child {
-        padding-left: 0;
-    }
-
-    &:hover {
-        color: #000;
-        text-decoration: underline;
     }
 
     ${media.lessThan("medium")`
         border: 1px solid #e6e6e6;
         cursor: pointer;
         margin-bottom: 1em;
+        margin-right: 0;
         padding: .8em;
 
         &:first-child {

@@ -9,10 +9,9 @@ import Image from '../../../images/bg2.png'
 
 const Hero = () => (
    <S.Hero bg={Image}>
-       <Header white={true}/>
+       <Header white={true} color="transparent"/>
        <S.HeroCopy>
            <h1>Um universo de ferramentas, para todas as situações</h1>
-           <S.Button>Sugerir uma ferramenta</S.Button>
            <S.Astronaut className="bounce" src={ImgAstronaut}/>
        </S.HeroCopy>
    </S.Hero>

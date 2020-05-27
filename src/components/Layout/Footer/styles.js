@@ -8,10 +8,12 @@ export const Footer = styled.footer`
     font-size: .8em;
     grid-area: footer;
     justify-content: center;
+    line-height: 1.5em;
     padding: 0 6em;
 
     ${media.lessThan("medium")`
         padding: 0 2em;
+        text-align: center;
     `}
 `
 
@@ -29,7 +31,7 @@ export const SubFooter = styled.div`
         font-size: 1.7em;
         font-weight: 500;
         line-height: 1.5em;
-        width: 70%;
+        margin-bottom: 1em;
     }
 
     .bounce-footer {
@@ -41,13 +43,17 @@ export const SubFooter = styled.div`
         50%  { transform: translateY(0); }
         100% { transform: translateY(-2em); }
     }
+
+    ${media.lessThan("medium")`
+        display: none;
+    `}
 ` 
 
 export const Call = styled.article`
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     z-index: 2;
 `
 

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import media from "styled-media-query"
 
 export const Hero = styled.section`
     background: ${props => `url(${props.bg})`} no-repeat;
@@ -7,7 +8,7 @@ export const Hero = styled.section`
     display: flex;
     flex-direction: column;
     grid-area: hero;
-    height: 75vh;
+    height: 50vh;
     padding: 2em 0;
     z-index: 0;
 
@@ -39,6 +40,14 @@ export const HeroCopy = styled.article`
         text-align: center;
         width: 50vw;
     }
+
+    ${media.lessThan("medium")`
+        h1 {
+            font-size: 1.5em;
+            width: 90%;
+            margin-bottom: 0;
+        }
+    `}
 `
 
 export const Button = styled.button`
@@ -65,4 +74,8 @@ export const Astronaut = styled.img`
     right: 10em;
     transform-origin: bottom;
     width: 320px;
+
+    ${media.lessThan("medium")`
+        display: none;
+    `}
 `

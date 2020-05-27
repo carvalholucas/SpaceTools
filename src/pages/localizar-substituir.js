@@ -15,7 +15,7 @@ const LocalizarSubstituir = () => (
 			description="Localize e substitua palavras em seu texto de maneira fácil, rápida e gratuitamente com a nossa ferramenta online."
 		/>
 		<L.Main>
-			<L.Section height="120vh">
+			<L.Section>
 				<L.Desc bg={Image}>
 					<h1>Localizar e Substituir Palavras</h1>
 					<p>Precisa remover os espaços extras em seus textos? Podemos ajudar você a fazer isso.</p>

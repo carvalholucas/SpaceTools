@@ -15,7 +15,7 @@ const Footer = () => (
             </S.Call>
         </S.SubFooter>
         <S.Footer>
-            <p>© Space Tools 2020 - Todos os direitos reservados</p>
+            <p>Space Tools © 2020 - Todos os direitos reservados</p>
         </S.Footer>
     </>
 )

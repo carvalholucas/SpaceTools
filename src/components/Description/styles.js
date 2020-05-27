@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Description = styled.section`
     align-items: center;
@@ -10,6 +11,10 @@ export const Description = styled.section`
 
 export const Content = styled.article`
     width: 50vw;
+
+    ${media.lessThan("medium")`
+        width: 80%;
+    `}
 
     h2 {
         color: #2a2a2a;

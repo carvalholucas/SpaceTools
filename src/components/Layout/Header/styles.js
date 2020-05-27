@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import media from "styled-media-query"
 
 export const Header = styled.header`
-    background: ${props => props.color};
+    background: ${props => props.color || "#ffffff"};
     align-items: center;
     display: flex;
     grid-area: header;
@@ -26,7 +26,7 @@ export const Logo = styled.span`
 
     img {
         margin-right: .5em;
-        width: 200px;
+        width: 180px;
     }
 `
 

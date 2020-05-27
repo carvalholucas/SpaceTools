@@ -13,8 +13,8 @@ const LocalizarSubstituir = () => {
 
     function handleSearch(search) {
         const text = textRef.current.value
-        const lengthSearch = text.match(search).length
-
+        const lengthSearch = text.match(search)?.length
+        
         lengthSearch > 0 ? console.log('Resultado:' + lengthSearch) : console.log('Nenhum resultado encontrado')
     }
 
@@ -39,24 +39,24 @@ const LocalizarSubstituir = () => {
                 <G.TextArea
                     aria-labelledby="textId"
                     name="text"
-                    rows="8"
+                    rows="6"
                     ref={textRef}
                     placeholder="Escreva ou cole (copy & paste) o seu texto aqui"
                 />
 
                 <S.Footer>
                     <S.Actions>
-                        <S.Button
+                        <G.Button
                             className="clear"
                             onClick={() => textRef.current.value = ""}
-                        >Limpar</S.Button>
+                        >Limpar</G.Button>
                     </S.Actions>
 
                     <S.Actions>
-                        <S.Button className="block copy" onClick={event => handleCopy(event)} style={{ marginLeft: 15 }}>
+                        <G.Button className="copy" onClick={event => handleCopy(event)}>
                             Copiar
                             <Copy size={18} style={{ marginLeft: 15 }} />
-                        </S.Button>
+                        </G.Button>
                     </S.Actions>
                 </S.Footer>
             </G.Card>
@@ -76,13 +76,10 @@ const LocalizarSubstituir = () => {
                         placeholder="Substituir por"
                     />
                 </S.FieldWrap>
-                <S.Button
-                    className="block"
-                    onClick={() => handleReplace(replaceRef.current.value)}
-                > 
-                Pesquisar & Substituir
-                <ExchangeAlt size={18} style={{ marginLeft: 15 }} />
-                </S.Button>
+                <G.Button onClick={() => handleReplace(replaceRef.current.value)}>
+                    Pesquisar & Substituir
+                    <ExchangeAlt size={18} style={{ marginLeft: 15 }} />
+                </G.Button>
             </S.Fields>
         </>
     )

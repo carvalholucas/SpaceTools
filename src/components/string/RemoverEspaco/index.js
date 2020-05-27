@@ -40,8 +40,8 @@ const RemoverEspaco = () => {
                     </S.Actions>
 
                     <S.Actions>
-                        <G.Button className="block" onClick={() => handleRemove()}> Remover Espaços </G.Button>
-                        <G.Button className="block" onClick={event => handleCopy(event)} style={{ marginLeft: 15 }}>
+                        <G.Button onClick={() => handleRemove()}> Remover Espaços </G.Button>
+                        <G.Button className="copy" onClick={event => handleCopy(event)}>
                             Copiar
                             <Copy size={18} style={{ marginLeft: 15 }} />
                         </G.Button>

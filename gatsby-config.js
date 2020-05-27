@@ -5,7 +5,7 @@ module.exports = {
 		title: `Space Tools`,
 		description: `Ferramentas Onlines Grátis`,
 		author: `Lucas Carvalho`,
-		siteUrl: `https://lazytext.netlify.app`,
+		siteUrl: `https://spacetools.me/`,
 	},
 	plugins: [
 		`gatsby-plugin-react-helmet`,
@@ -14,8 +14,8 @@ module.exports = {
 		{
 			resolve: 'gatsby-plugin-robots-txt',
 			options: {
-				host: 'https://lazytext.netlify.app/',
-				sitemap: 'https://lazytext.netlify.app/sitemap.xml',
+				host: 'https://spacetools.me/',
+				sitemap: 'https://spacetools.me/sitemap.xml',
 				policy: [{ userAgent: '*', allow: '/' }]
 			}
 		},
